@@ -8,15 +8,27 @@ function hpAvailable() {
     return true;
 }
 
+dell = {
+    ssd:128,
+    ram:8,
+    color:'silver'
+}
+
+hp = {
+    ssd:256,
+    ram:16,
+    color:'white'
+}
+
 function buylaptop() {
     return new Promise((resolve, reject) => {
         if (this.dellAvailable()) {
             return setTimeout(() => {
-                resolve('buy dell laptop');
+                resolve(this.dell);
             }, 3000);
         } else if (this.hpAvailable()) {
            return setTimeout(() => {
-                resolve('buy hp laptop');
+                resolve(this.hp);
             }, 3000);
         } else {
             reject("don't buy anthing");
